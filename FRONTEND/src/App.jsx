@@ -70,8 +70,8 @@ function App() {
 
     return (
       <div className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {steps.map((step, idx) => (
               <React.Fragment key={step.num}>
                 <button
@@ -81,17 +81,17 @@ function App() {
                   disabled={step.num > appState.page}
                   className={`flex flex-col items-center gap-2 transition-all ${
                     step.num === appState.page
-                      ? 'text-blue-600 font-bold scale-110'
+                      ? 'text-emerald-700 font-bold scale-110'
                       : step.num < appState.page
-                      ? 'text-green-600 cursor-pointer hover:scale-105'
+                      ? 'text-amber-600 cursor-pointer hover:scale-105'
                       : 'text-gray-400 cursor-not-allowed'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg ${
                     step.num === appState.page
-                      ? 'bg-blue-100 text-blue-600'
+                      ? 'bg-emerald-100 text-emerald-700'
                       : step.num < appState.page
-                      ? 'bg-green-100 text-green-600'
+                      ? 'bg-amber-100 text-amber-600'
                       : 'bg-gray-100 text-gray-400'
                   }`}>
                     {step.num < appState.page ? '✓' : step.icon}
@@ -100,7 +100,7 @@ function App() {
                 </button>
                 {idx < steps.length - 1 && (
                   <div className={`h-1 w-16 rounded-full transition-all ${
-                    step.num < appState.page ? 'bg-green-400' : 'bg-gray-200'
+                    step.num < appState.page ? 'bg-emerald-400' : 'bg-gray-200'
                   }`}></div>
                 )}
               </React.Fragment>

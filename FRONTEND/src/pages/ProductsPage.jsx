@@ -53,25 +53,25 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
     return (
       <div className="flex items-center justify-center h-[calc(100vh-100px)]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg font-medium">Loading categories...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-emerald-200 border-t-emerald-600 mx-auto mb-6"></div>
+          <p className="text-slate-700 text-lg font-medium">Loading categories...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-[calc(100vh-100px)] bg-slate-50 p-4 md:p-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-0">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Add Products</h1>
-            <p className="text-gray-600">Billing for <span className="font-semibold text-blue-600">{buyer.partyName}</span></p>
+            <p className="text-slate-600">Billing for <span className="font-semibold text-emerald-600">{buyer.partyName}</span></p>
           </div>
           <button
             onClick={onGoBack}
-            className="px-6 py-3 bg-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transition font-semibold shadow-sm hover:shadow-md"
+            className="px-6 py-3 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition font-semibold shadow-sm hover:shadow-md"
           >
             ← Change Buyer
           </button>
@@ -88,13 +88,13 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
                     <button
                       key={cat.id}
                       onClick={() => setSelectedCategory(cat.id)}
-                      className="group bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-gray-200 hover:border-blue-500 overflow-hidden text-left"
+                      className="group bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-gray-200 hover:border-emerald-500 overflow-hidden text-left"
                     >
-                      <div className="bg-gradient-to-br from-blue-500 to-indigo-600 h-24 flex items-center justify-center group-hover:scale-110 transition">
+                      <div className="bg-gradient-to-br from-emerald-500 to-teal-600 h-24 flex items-center justify-center group-hover:scale-110 transition">
                         <span className="text-5xl">📦</span>
                       </div>
                       <div className="p-6 text-center">
-                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition">
                           {cat.name}
                         </h3>
                         {cat.description && (
@@ -109,7 +109,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               <div>
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="mb-6 px-4 py-2 bg-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transition font-semibold shadow-sm"
+                  className="mb-6 px-4 py-2 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition font-semibold shadow-sm"
                 >
                   ← Back
                 </button>
@@ -124,7 +124,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
           {/* Cart Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24 border-2 border-gray-200">
-              <div className="flex items-center justify-between mb-4 pb-4 border-b-2 border-blue-500">
+              <div className="flex items-center justify-between mb-4 pb-4 border-b-2 border-emerald-500">
                 <h3 className="text-xl font-bold text-gray-900">🛒 Cart</h3>
                 <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">{cart.length}</span>
               </div>
@@ -137,7 +137,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               ) : (
                 <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
                   {cart.map(item => (
-                    <div key={item.id} className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition">
+                    <div key={item.id} className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-gray-200 hover:border-emerald-300 transition">
                       <div className="flex justify-between items-start mb-2">
                         <p className="font-bold text-gray-900 text-sm line-clamp-1">{item.modelName}</p>
                         <button
@@ -188,7 +188,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
                   <span>GST (18%):</span>
                   <span className="font-semibold">₹{gst.toFixed(2)}</span>
                 </div>
-                <div className="border-t border-gray-300 pt-2 flex justify-between text-base font-bold text-blue-600">
+                <div className="border-t border-gray-300 pt-2 flex justify-between text-base font-bold text-emerald-700">
                   <span>Total:</span>
                   <span>₹{grandTotal.toFixed(2)}</span>
                 </div>
@@ -239,11 +239,11 @@ function CategoryProducts({ categoryId, onAdd, buyerId }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {products.map(p => (
-        <div key={p.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition border-2 border-gray-200 hover:border-blue-500 p-6 group">
-          <h4 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition line-clamp-2">{p.modelName}</h4>
-          <p className="text-2xl font-bold text-blue-600 mb-4">₹{p.defaultPrice}</p>
+        <div key={p.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition border-2 border-gray-200 hover:border-emerald-500 p-6 group">
+          <h4 className="font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition line-clamp-2">{p.modelName}</h4>
+          <p className="text-2xl font-bold text-emerald-700 mb-4">₹{p.defaultPrice}</p>
           <button
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 rounded-lg hover:from-blue-600 hover:to-indigo-700 transition font-semibold shadow-md hover:shadow-lg active:scale-95"
+            className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition font-semibold shadow-md hover:shadow-lg active:scale-95"
             onClick={() => handleAddToCart(p)}
           >
             Add to Cart

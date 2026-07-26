@@ -99,8 +99,8 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
   const dueDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-IN');
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-gray-50 p-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-[calc(100vh-100px)] bg-slate-50 p-4 md:p-6">
+      <div className="max-w-5xl mx-auto px-4 md:px-0">
         {error && (
           <div className="mb-6 bg-red-50 border-2 border-red-500 rounded-lg p-4 text-red-700">
             ⚠️ {error}
@@ -110,11 +110,11 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         {/* Invoice Preview */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8 border-2 border-gray-200">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 p-10 text-white">
-            <div className="flex justify-between items-start mb-6">
+          <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 p-10 text-white">
+            <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-6">
               <div>
                 <h1 className="text-5xl font-bold">{company.companyName}</h1>
-                <div className="flex flex-col gap-1 mt-3 text-blue-100">
+                <div className="flex flex-col gap-1 mt-3 text-emerald-100">
                   <p>📍 {company.billingAddress}</p>
                   <p>📞 {company.mobile} | 📧 {company.email}</p>
                 </div>
@@ -128,7 +128,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
           {/* Content */}
           <div className="p-10">
             {/* Invoice Meta */}
-            <div className="grid grid-cols-2 gap-10 mb-10 pb-10 border-b-2 border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b-2 border-gray-200">
               <div>
                 <h3 className="text-xs font-black text-gray-600 uppercase tracking-widest mb-6">Invoice Details</h3>
                 <div className="space-y-3 text-sm">
@@ -167,8 +167,8 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
             </div>
 
             {/* Items Table */}
-            <div className="mb-10">
-              <table className="w-full">
+            <div className="mb-10 overflow-x-auto">
+              <table className="w-full min-w-[640px]">
                 <thead>
                   <tr className="bg-gray-100 border-y-2 border-gray-300">
                     <th className="px-6 py-4 text-left text-xs font-black text-gray-700 uppercase tracking-wider">Product</th>
@@ -204,7 +204,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
                   </div>
                   <div className="border-t-2 border-gray-300 pt-4 flex justify-between">
                     <span className="text-lg font-bold text-gray-900">Grand Total:</span>
-                    <span className="text-3xl font-black text-blue-600">₹{grandTotal.toFixed(2)}</span>
+                    <span className="text-3xl font-black text-emerald-700">₹{grandTotal.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
@@ -219,10 +219,10 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-4 flex-wrap justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center">
           <button
             onClick={onGoBack}
-            className="px-8 py-4 rounded-lg bg-white text-gray-700 font-bold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all shadow-md hover:shadow-lg"
+            className="px-8 py-4 rounded-lg bg-white text-slate-700 font-bold border-2 border-gray-300 hover:border-emerald-500 hover:text-emerald-700 transition-all shadow-md hover:shadow-lg"
           >
             ← Edit Cart
           </button>
@@ -232,7 +232,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
               className={`px-8 py-4 rounded-lg text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center gap-2 ${
                 loading 
                   ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700'
+                  : 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700'
               }`}
               onClick={generateInvoice}
               disabled={loading}
@@ -243,7 +243,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
           ) : (
             <>
               <button
-                className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold hover:from-blue-600 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+                className="px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold hover:from-emerald-600 hover:to-teal-700 transition-all shadow-md hover:shadow-lg flex items-center gap-2"
                 onClick={downloadPDF}
               >
                 <span>📄</span>
