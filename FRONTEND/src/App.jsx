@@ -81,17 +81,17 @@ function App() {
                   disabled={step.num > appState.page}
                   className={`flex flex-col items-center gap-2 transition-all ${
                     step.num === appState.page
-                      ? 'text-emerald-700 font-bold scale-110'
+                      ? 'text-[#1D3557] font-bold scale-110'
                       : step.num < appState.page
-                      ? 'text-amber-600 cursor-pointer hover:scale-105'
+                      ? 'text-[#457B9D] cursor-pointer hover:scale-105'
                       : 'text-gray-400 cursor-not-allowed'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg ${
                     step.num === appState.page
-                      ? 'bg-emerald-100 text-emerald-700'
+                      ? 'bg-[#A8DADC] text-[#1D3557]'
                       : step.num < appState.page
-                      ? 'bg-amber-100 text-amber-600'
+                      ? 'bg-[#A8DADC] text-[#457B9D]'
                       : 'bg-gray-100 text-gray-400'
                   }`}>
                     {step.num < appState.page ? '✓' : step.icon}

@@ -90,7 +90,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
                       onClick={() => setSelectedCategory(cat.id)}
                       className="group bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-gray-200 hover:border-emerald-500 overflow-hidden text-left"
                     >
-                      <div className="bg-gradient-to-br from-emerald-500 to-teal-600 h-24 flex items-center justify-center group-hover:scale-110 transition">
+                      <div className="h-24 bg-[#457B9D] flex items-center justify-center group-hover:scale-110 transition">
                         <span className="text-5xl">📦</span>
                       </div>
                       <div className="p-6 text-center">
@@ -137,7 +137,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               ) : (
                 <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
                   {cart.map(item => (
-                    <div key={item.id} className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-gray-200 hover:border-emerald-300 transition">
+                    <div key={item.id} className="bg-slate-50 p-4 rounded-lg border border-gray-200 hover:border-[#457B9D] transition">
                       <div className="flex justify-between items-start mb-2">
                         <p className="font-bold text-gray-900 text-sm line-clamp-1">{item.modelName}</p>
                         <button
@@ -179,7 +179,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               )}
 
               {/* Totals */}
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 space-y-2 mb-6 border border-gray-200">
+              <div className="bg-[#F1FAEE] rounded-lg p-4 space-y-2 mb-6 border border-gray-200">
                 <div className="flex justify-between text-sm text-gray-700">
                   <span>Subtotal:</span>
                   <span className="font-semibold">₹{subtotal.toFixed(2)}</span>
@@ -195,7 +195,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               </div>
 
               <button
-                className="w-full bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white py-3 rounded-lg hover:from-[#D62839] hover:to-[#1D3557] transition font-bold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                className="w-full bg-[#E63946] text-white py-3 rounded-lg hover:bg-[#D62839] transition font-bold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
                 onClick={() => onGenerateInvoice(cart)}
                 disabled={cart.length === 0}
               >
@@ -243,7 +243,7 @@ function CategoryProducts({ categoryId, onAdd, buyerId }) {
           <h4 className="font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition line-clamp-2">{p.modelName}</h4>
           <p className="text-2xl font-bold text-emerald-700 mb-4">₹{p.defaultPrice}</p>
           <button
-            className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition font-semibold shadow-md hover:shadow-lg active:scale-95"
+            className="w-full bg-[#1D3557] text-white py-2 rounded-lg hover:bg-[#457B9D] transition font-semibold shadow-md hover:shadow-lg active:scale-95"
             onClick={() => handleAddToCart(p)}
           >
             Add to Cart

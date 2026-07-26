@@ -110,7 +110,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         {/* Invoice Preview */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8 border-2 border-gray-200">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#1D3557] via-[#457B9D] to-[#A8DADC] p-10 text-white">
+          <div className="bg-[#1D3557] p-10 text-white">
             <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-6">
               <div>
                 <h1 className="text-5xl font-bold">{company.companyName}</h1>
@@ -193,7 +193,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
             {/* Totals */}
             <div className="flex justify-end mb-10">
               <div className="w-full md:w-96">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 space-y-4 border-2 border-gray-200">
+                <div className="bg-[#F1FAEE] rounded-xl p-8 space-y-4 border-2 border-gray-200">
                   <div className="flex justify-between text-gray-700">
                     <span className="font-semibold">Subtotal:</span>
                     <span className="text-lg font-bold">₹{subtotal.toFixed(2)}</span>
@@ -232,7 +232,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
               className={`px-8 py-4 rounded-lg text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center gap-2 ${
                 loading 
                   ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-[#E63946] to-[#457B9D] hover:from-[#D62839] hover:to-[#1D3557]'
+                  : 'bg-[#E63946] hover:bg-[#D62839]'
               }`}
               onClick={generateInvoice}
               disabled={loading}
@@ -243,7 +243,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
           ) : (
             <>
               <button
-                className="px-8 py-4 rounded-lg bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white font-bold hover:from-[#D62839] hover:to-[#1D3557] transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+                className="px-8 py-4 rounded-lg bg-[#E63946] text-white font-bold hover:bg-[#D62839] transition-all shadow-md hover:shadow-lg flex items-center gap-2"
                 onClick={downloadPDF}
               >
                 <span>📄</span>
@@ -254,7 +254,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
 
           <button
             onClick={onStartNewBill}
-            className="px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold hover:from-orange-600 hover:to-red-700 transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+            className="px-8 py-4 rounded-lg bg-[#457B9D] text-white font-bold hover:bg-[#1D3557] transition-all shadow-md hover:shadow-lg flex items-center gap-2"
           >
             <span>🔄</span>
             <span>Start New Bill</span>

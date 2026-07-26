@@ -70,11 +70,11 @@ function BuyersPage({ onSelectBuyer }) {
                 onClick={() => onSelectBuyer?.(buyer)}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-500 cursor-pointer"
               >
-                <div className="h-1 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600"></div>
+                <div className="h-1 bg-[#457B9D]"></div>
 
                 <div className="p-6">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#457B9D] to-[#1D3557] rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-14 h-14 bg-[#457B9D] rounded-full flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold text-xl">
                         {buyer.partyName?.charAt(0)?.toUpperCase()}
                       </span>
@@ -132,7 +132,7 @@ function BuyersPage({ onSelectBuyer }) {
                       e.stopPropagation();
                       onSelectBuyer?.(buyer);
                     }}
-                    className="w-full mt-4 bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white font-semibold py-3 rounded-lg hover:from-[#D62839] hover:to-[#1D3557] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full mt-4 bg-[#E63946] text-white font-semibold py-3 rounded-lg hover:bg-[#D62839] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
                   >
                     <span>Select Buyer</span>
                     <span className="text-lg">→</span>
