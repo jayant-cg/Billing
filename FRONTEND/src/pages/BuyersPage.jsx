@@ -38,7 +38,7 @@ function BuyersPage({ onSelectBuyer }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-slate-50 p-4 md:p-8">
+    <div className="min-h-[calc(100vh-100px)] bg-[#F1FAEE] p-4 md:p-8">
       <div className="max-w-7xl mx-auto px-4 md:px-0">
         <div className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-3">
@@ -74,14 +74,14 @@ function BuyersPage({ onSelectBuyer }) {
 
                 <div className="p-6">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#457B9D] to-[#1D3557] rounded-full flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold text-xl">
                         {buyer.partyName?.charAt(0)?.toUpperCase()}
                       </span>
                     </div>
 
                     <div className="flex-1">
-                      <h2 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition line-clamp-1">
+                      <h2 className="text-xl font-bold text-slate-900 group-hover:text-[#457B9D] transition line-clamp-1">
                         {buyer.partyName}
                       </h2>
 
@@ -132,7 +132,7 @@ function BuyersPage({ onSelectBuyer }) {
                       e.stopPropagation();
                       onSelectBuyer?.(buyer);
                     }}
-                    className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-3 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full mt-4 bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white font-semibold py-3 rounded-lg hover:from-[#D62839] hover:to-[#1D3557] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
                   >
                     <span>Select Buyer</span>
                     <span className="text-lg">→</span>

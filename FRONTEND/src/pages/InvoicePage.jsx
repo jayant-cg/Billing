@@ -99,7 +99,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
   const dueDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-IN');
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-slate-50 p-4 md:p-6">
+    <div className="min-h-[calc(100vh-100px)] bg-[#F1FAEE] p-4 md:p-6">
       <div className="max-w-5xl mx-auto px-4 md:px-0">
         {error && (
           <div className="mb-6 bg-red-50 border-2 border-red-500 rounded-lg p-4 text-red-700">
@@ -110,7 +110,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         {/* Invoice Preview */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8 border-2 border-gray-200">
           {/* Header */}
-          <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 p-10 text-white">
+          <div className="bg-gradient-to-r from-[#1D3557] via-[#457B9D] to-[#A8DADC] p-10 text-white">
             <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-6">
               <div>
                 <h1 className="text-5xl font-bold">{company.companyName}</h1>
@@ -204,7 +204,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
                   </div>
                   <div className="border-t-2 border-gray-300 pt-4 flex justify-between">
                     <span className="text-lg font-bold text-gray-900">Grand Total:</span>
-                    <span className="text-3xl font-black text-emerald-700">₹{grandTotal.toFixed(2)}</span>
+                    <span className="text-3xl font-black text-[#1D3557]">₹{grandTotal.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
@@ -222,7 +222,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center">
           <button
             onClick={onGoBack}
-            className="px-8 py-4 rounded-lg bg-white text-slate-700 font-bold border-2 border-gray-300 hover:border-emerald-500 hover:text-emerald-700 transition-all shadow-md hover:shadow-lg"
+            className="px-8 py-4 rounded-lg bg-white text-slate-700 font-bold border-2 border-gray-300 hover:border-[#457B9D] hover:text-[#457B9D] transition-all shadow-md hover:shadow-lg"
           >
             ← Edit Cart
           </button>
@@ -232,7 +232,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
               className={`px-8 py-4 rounded-lg text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center gap-2 ${
                 loading 
                   ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700'
+                  : 'bg-gradient-to-r from-[#E63946] to-[#457B9D] hover:from-[#D62839] hover:to-[#1D3557]'
               }`}
               onClick={generateInvoice}
               disabled={loading}
@@ -243,7 +243,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
           ) : (
             <>
               <button
-                className="px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold hover:from-emerald-600 hover:to-teal-700 transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+                className="px-8 py-4 rounded-lg bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white font-bold hover:from-[#D62839] hover:to-[#1D3557] transition-all shadow-md hover:shadow-lg flex items-center gap-2"
                 onClick={downloadPDF}
               >
                 <span>📄</span>

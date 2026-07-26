@@ -69,7 +69,7 @@ function App() {
     ];
 
     return (
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div className="bg-[#F1FAEE] border-b border-[#A8DADC] sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {steps.map((step, idx) => (
@@ -100,7 +100,7 @@ function App() {
                 </button>
                 {idx < steps.length - 1 && (
                   <div className={`h-1 w-16 rounded-full transition-all ${
-                    step.num < appState.page ? 'bg-emerald-400' : 'bg-gray-200'
+                    step.num < appState.page ? 'bg-[#457B9D]' : 'bg-gray-200'
                   }`}></div>
                 )}
               </React.Fragment>

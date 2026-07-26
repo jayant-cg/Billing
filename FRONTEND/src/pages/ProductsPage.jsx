@@ -61,17 +61,17 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-slate-50 p-4 md:p-6">
+    <div className="min-h-[calc(100vh-100px)] bg-[#F1FAEE] p-4 md:p-6">
       <div className="max-w-7xl mx-auto px-4 md:px-0">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Add Products</h1>
-            <p className="text-slate-600">Billing for <span className="font-semibold text-emerald-600">{buyer.partyName}</span></p>
+            <p className="text-slate-600">Billing for <span className="font-semibold text-[#457B9D]">{buyer.partyName}</span></p>
           </div>
           <button
             onClick={onGoBack}
-            className="px-6 py-3 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition font-semibold shadow-sm hover:shadow-md"
+            className="px-6 py-3 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-[#457B9D] hover:text-[#457B9D] transition font-semibold shadow-sm hover:shadow-md"
           >
             ← Change Buyer
           </button>
@@ -109,7 +109,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
               <div>
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="mb-6 px-4 py-2 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition font-semibold shadow-sm"
+                  className="mb-6 px-4 py-2 bg-white text-slate-700 rounded-lg border-2 border-gray-200 hover:border-[#457B9D] hover:text-[#457B9D] transition font-semibold shadow-sm"
                 >
                   ← Back
                 </button>
@@ -188,14 +188,14 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
                   <span>GST (18%):</span>
                   <span className="font-semibold">₹{gst.toFixed(2)}</span>
                 </div>
-                <div className="border-t border-gray-300 pt-2 flex justify-between text-base font-bold text-emerald-700">
+                <div className="border-t border-gray-300 pt-2 flex justify-between text-base font-bold text-[#1D3557]">
                   <span>Total:</span>
                   <span>₹{grandTotal.toFixed(2)}</span>
                 </div>
               </div>
 
               <button
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-lg hover:from-green-600 hover:to-emerald-700 transition font-bold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                className="w-full bg-gradient-to-r from-[#E63946] to-[#457B9D] text-white py-3 rounded-lg hover:from-[#D62839] hover:to-[#1D3557] transition font-bold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
                 onClick={() => onGenerateInvoice(cart)}
                 disabled={cart.length === 0}
               >
