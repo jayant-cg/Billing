@@ -6,10 +6,10 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
   const [error, setError] = useState(null);
 
   const company = {
-    companyName: "TechStore Solutions",
-    billingAddress: "123 Business Park, Mumbai, Maharashtra 400001",
+    companyName: "CG Infinity Solutions",
+    billingAddress: "B-9 noida sector 3, Noida, Uttar Pradesh, India",
     mobile: "+91 98765 43210",
-    email: "info@techstore.com",
+    email: "info@cginfinitysolutions.com",
     gstin: "27AABCT1234H1Z0"
   };
 
