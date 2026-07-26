@@ -35,31 +35,5 @@ namespace BACKEND.Controllers
 
             return Ok(categories);
         }
-
-        // ==========================================
-        // GET CATEGORY BY ID
-        // GET: api/Categories/1
-        // ==========================================
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetCategoryById(int id)
-        {
-            var category = await _context.Categories
-                .Where(x => x.Id == id)
-                .Select(x => new CategoryDto
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Description = x.Description
-                })
-                .FirstOrDefaultAsync();
-
-            if (category == null)
-            {
-                return NotFound("Category not found.");
-            }
-
-            return Ok(category);
-        }
-
-   }
+    }
 }
