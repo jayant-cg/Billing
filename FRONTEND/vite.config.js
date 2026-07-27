@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5294' // 
+      '/api': 'https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net' // 
     }
   }
 })

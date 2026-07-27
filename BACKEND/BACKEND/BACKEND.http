@@ -1,4 +1,4 @@
-@BACKEND_HostAddress = http://localhost:5294
+@BACKEND_HostAddress = https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net
 
 GET {{BACKEND_HostAddress}}/weatherforecast/
 Accept: application/json

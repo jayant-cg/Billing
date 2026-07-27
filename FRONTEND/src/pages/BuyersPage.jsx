@@ -6,7 +6,7 @@ function BuyersPage({ onSelectBuyer }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5294/api/Buyers')
+    fetch('https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/Buyers')
       .then(res => res.json())
       .then(data => {
         setBuyers(data);

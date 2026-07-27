@@ -7,7 +7,7 @@ function ProductsPage({ buyer, onGenerateInvoice, onGoBack }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5294/api/categories')
+    fetch('https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/categories')
       .then(res => res.json())
       .then(data => {
         setCategories(data);
@@ -215,7 +215,7 @@ function CategoryProducts({ categoryId, onAdd, buyerId }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5294/api/Products/category/${categoryId}`)
+    fetch(`https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/Products/category/${categoryId}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);

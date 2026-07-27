@@ -30,7 +30,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         status: "Created"
       };
 
-      const res = await fetch('http://localhost:5294/api/Invoices', {
+      const res = await fetch('https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/Invoices', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(invoicePayload)
@@ -45,7 +45,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
         const itemAmount = item.price * item.qty;
         const itemGstAmount = itemAmount * 0.18;
 
-        await fetch('http://localhost:5294/api/InvoiceItems', {
+        await fetch('https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/InvoiceItems', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -72,7 +72,7 @@ function InvoicePage({ buyer, cart, onStartNewBill, onGoBack }) {
 
   const downloadPDF = async () => {
     try {
-      const res = await fetch(`http://localhost:5294/api/Invoices/${invoiceData.id}/pdf`);
+      const res = await fetch(`https://billingcg-bbgybfaafkdda0g2.indiasouthcentral-01.azurewebsites.net/api/Invoices/${invoiceData.id}/pdf`);
       if (!res.ok) throw new Error('Failed to download PDF');
 
       const blob = await res.blob();
